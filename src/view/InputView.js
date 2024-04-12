@@ -1,5 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import { INPUT_MESSAGE } from '../constants/messages.js';
+import validateCarNames from '../validation/carNameValidator.js';
 
 const InputView = {
   readRacingCarNames: async () => {
