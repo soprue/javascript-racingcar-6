@@ -39,11 +39,17 @@
 
 # 💯 테스트 작성 목록
 
-// TODO
+// TODO: 수정
 
-<br />
-<br />
-
-# 📂 파일 구조
-
-// TODO
+```bash
+/__tests__
+  /input
+    - inputCarNames.test.js      # 자동차 이름 입력 처리 테스트
+    - inputAttemptCount.test.js  # 시도 횟수 입력 처리 테스트
+  /game
+    - gameLogic.test.js          # 게임 로직과 자동차 전진 조건 테스트
+  /output
+    - resultDisplay.test.js      # 결과 출력 테스트
+  /integration
+    - appIntegration.test.js     # 전체 애플리케이션 통합 테스트
+```
