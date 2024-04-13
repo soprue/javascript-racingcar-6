@@ -29,4 +29,10 @@ describe('validateCarNames', () => {
       CAR_ERROR_MESSAGE.DUPLICATION,
     );
   });
+
+  test('자동차의 이름이 1자 이상 5자 이하인지 확인', () => {
+    const carNames = 'carcarcar,car1';
+
+    expect(() => validateCarNames(carNames)).toThrow(CAR_ERROR_MESSAGE.LENGTH);
+  });
 });

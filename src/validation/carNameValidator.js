@@ -1,4 +1,5 @@
 import { CAR_ERROR_MESSAGE } from '../constants/error.js';
+import { CAR_NAME_LENGTH } from '../constants/options.js';
 import InputError from '../errors/InputError.js';
 
 const checkEmptyNames = (carNames) => {
@@ -20,12 +21,24 @@ const checkDuplication = (carNames) => {
   }
 };
 
+const checkLength = (carName) => {
+  if (
+    carName.length < CAR_NAME_LENGTH.MIN ||
+    carName.length > CAR_NAME_LENGTH.MAX
+  ) {
+    throw new InputError(CAR_ERROR_MESSAGE.LENGTH);
+  }
+};
+
 const validateCarNames = (input) => {
   const trimmedCars = input.split(',').map((car) => car.trim());
 
   checkEmptyNames(trimmedCars);
   checkMinimumCarCount(trimmedCars);
   checkDuplication(trimmedCars);
+  trimmedCars.forEach((carName) => {
+    checkLength(carName);
+  });
 };
 
 export default validateCarNames;
