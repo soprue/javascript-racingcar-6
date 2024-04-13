@@ -50,6 +50,4 @@
     - gameLogic.test.js          # 게임 로직과 자동차 전진 조건 테스트
   /output
     - resultDisplay.test.js      # 결과 출력 테스트
-  /integration
-    - appIntegration.test.js     # 전체 애플리케이션 통합 테스트
 ```
