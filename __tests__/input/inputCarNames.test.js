@@ -14,4 +14,13 @@ describe('validateCarNames', () => {
     expect(() => validateCarNames(carNames)).toThrow(InputError);
     expect(() => validateCarNames(carNames)).toThrow(CAR_ERROR_MESSAGE.EMPTY);
   });
+
+  test('자동차 이름이 2대 이상 입력되었는지 확인', () => {
+    const carNames = 'car1';
+
+    expect(() => validateCarNames(carNames)).toThrow(InputError);
+    expect(() => validateCarNames(carNames)).toThrow(
+      CAR_ERROR_MESSAGE.MINIMUM_COUNT,
+    );
+  });
 });

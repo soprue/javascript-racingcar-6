@@ -7,10 +7,17 @@ const checkEmptyNames = (carNames) => {
   }
 };
 
+const checkMinimumCarCount = (racingCarNames) => {
+  if (racingCarNames.length < 2) {
+    throw new InputError(CAR_ERROR_MESSAGE.MINIMUM_COUNT);
+  }
+};
+
 const validateCarNames = (input) => {
   const trimmedCars = input.split(',').map((car) => car.trim());
 
   checkEmptyNames(trimmedCars);
+  checkMinimumCarCount(trimmedCars);
 };
 
 export default validateCarNames;
