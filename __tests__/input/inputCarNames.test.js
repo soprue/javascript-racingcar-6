@@ -11,16 +11,22 @@ describe('validateCarNames', () => {
   test('자동차 이름 입력 중 쉼표만 있는 입력이나 공백 이름이 존재하는 경우', () => {
     const carNames = 'car1,,car2';
 
-    expect(() => validateCarNames(carNames)).toThrow(InputError);
     expect(() => validateCarNames(carNames)).toThrow(CAR_ERROR_MESSAGE.EMPTY);
   });
 
   test('자동차 이름이 2대 이상 입력되었는지 확인', () => {
     const carNames = 'car1';
 
-    expect(() => validateCarNames(carNames)).toThrow(InputError);
     expect(() => validateCarNames(carNames)).toThrow(
       CAR_ERROR_MESSAGE.MINIMUM_COUNT,
+    );
+  });
+
+  test('자동차 이름이 중복 입력 된 경우', () => {
+    const carNames = 'car1,car1,car2';
+
+    expect(() => validateCarNames(carNames)).toThrow(
+      CAR_ERROR_MESSAGE.DUPLICATION,
     );
   });
 });

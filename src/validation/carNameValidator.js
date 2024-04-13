@@ -7,9 +7,16 @@ const checkEmptyNames = (carNames) => {
   }
 };
 
-const checkMinimumCarCount = (racingCarNames) => {
-  if (racingCarNames.length < 2) {
+const checkMinimumCarCount = (carNames) => {
+  if (carNames.length < 2) {
     throw new InputError(CAR_ERROR_MESSAGE.MINIMUM_COUNT);
+  }
+};
+
+const checkDuplication = (carNames) => {
+  const uniqueCarNames = new Set(carNames);
+  if (uniqueCarNames.size != carNames.length) {
+    throw new InputError(CAR_ERROR_MESSAGE.DUPLICATION);
   }
 };
 
@@ -18,6 +25,7 @@ const validateCarNames = (input) => {
 
   checkEmptyNames(trimmedCars);
   checkMinimumCarCount(trimmedCars);
+  checkDuplication(trimmedCars);
 };
 
 export default validateCarNames;
