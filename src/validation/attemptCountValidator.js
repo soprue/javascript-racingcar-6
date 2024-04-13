@@ -1,5 +1,5 @@
-import { ATTEMPT_ERROR_MESSAGE } from '../constants/error';
-import InputError from '../errors/InputError';
+import { ATTEMPT_ERROR_MESSAGE } from '../constants/error.js';
+import InputError from '../errors/InputError.js';
 
 const checkIsNumber = (count) => {
   if (isNaN(count)) {
@@ -14,9 +14,17 @@ const checkLength = (count) => {
   }
 };
 
+const checkIsPositiveInteger = (count) => {
+  count = Number(count);
+  if (count < 1) {
+    throw new InputError(ATTEMPT_ERROR_MESSAGE.MINIMUM_ONE);
+  }
+};
+
 const validateAttemptCount = (input) => {
   checkIsNumber(input);
   checkLength(input);
+  checkIsPositiveInteger(input);
 };
 
 export default validateAttemptCount;
