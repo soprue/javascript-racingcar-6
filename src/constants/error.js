@@ -5,4 +5,8 @@ const CAR_ERROR_MESSAGE = Object.freeze({
   LENGTH: `자동차 이름은 1자 이상 5자 이하여야 합니다.`,
 });
 
-export { CAR_ERROR_MESSAGE };
+const ATTEMPT_ERROR_MESSAGE = Object.freeze({
+  IS_NUMBER: `시도 횟수는 숫자여야 합니다.`,
+});
+
+export { CAR_ERROR_MESSAGE, ATTEMPT_ERROR_MESSAGE };

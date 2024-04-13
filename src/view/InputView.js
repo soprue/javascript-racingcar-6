@@ -12,6 +12,7 @@ const InputView = {
     const inputAttempt = await Console.readLineAsync(
       INPUT_MESSAGE.ATTEMPT_COUNT,
     );
+    return validateAttemptCount(inputAttempt);
   },
 };
 
