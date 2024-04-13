@@ -7,8 +7,16 @@ const checkIsNumber = (count) => {
   }
 };
 
+const checkLength = (count) => {
+  count = count.trim();
+  if (count.length === 0) {
+    throw new InputError(ATTEMPT_ERROR_MESSAGE.NOT_EMPTY);
+  }
+};
+
 const validateAttemptCount = (input) => {
   checkIsNumber(input);
+  checkLength(input);
 };
 
 export default validateAttemptCount;

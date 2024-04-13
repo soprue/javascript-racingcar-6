@@ -7,6 +7,7 @@ const CAR_ERROR_MESSAGE = Object.freeze({
 
 const ATTEMPT_ERROR_MESSAGE = Object.freeze({
   IS_NUMBER: `시도 횟수는 숫자여야 합니다.`,
+  NOT_EMPTY: '시도 횟수는 비어 있을 수 없습니다. 1자 이상 입력해 주세요.',
 });
 
 export { CAR_ERROR_MESSAGE, ATTEMPT_ERROR_MESSAGE };

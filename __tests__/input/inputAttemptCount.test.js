@@ -8,4 +8,11 @@ describe('시도 횟수 유효성 테스트', () => {
       ATTEMPT_ERROR_MESSAGE.IS_NUMBER,
     );
   });
+
+  test('입력한 시도 횟수가 공백인 경우', () => {
+    const validInput = ' ';
+    expect(() => validateAttemptCount(validInput)).toThrow(
+      ATTEMPT_ERROR_MESSAGE.NOT_EMPTY,
+    );
+  });
 });
