@@ -7,6 +7,12 @@ const InputView = {
     const inputCars = await Console.readLineAsync(INPUT_MESSAGE.CARS_NAME);
     return validateCarNames(inputCars);
   },
+
+  readAttemptCount: async () => {
+    const inputAttempt = await Console.readLineAsync(
+      INPUT_MESSAGE.ATTEMPT_COUNT,
+    );
+  },
 };
 
 export default InputView;

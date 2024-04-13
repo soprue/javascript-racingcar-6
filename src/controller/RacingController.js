@@ -5,6 +5,7 @@ class RacingController {
 
   async prepareGame() {
     const racingCarNames = await InputView.readRacingCarNames();
+    const attemptCount = await InputView.readAttemptCount();
   }
 
   startRace() {}
