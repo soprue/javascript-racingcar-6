@@ -3,9 +3,12 @@ import OutputView from '../view/OutputView.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
 
 class RacingController {
-  constructor() {
-    this.racingBoard = {};
-    this.attemptCount = 0;
+  constructor(carNames = [], attemptCount = 0) {
+    this.racingBoard = carNames.reduce((acc, name) => {
+      acc[name] = 0;
+      return acc;
+    }, {});
+    this.attemptCount = attemptCount;
   }
 
   async prepareGame() {
@@ -30,6 +33,9 @@ class RacingController {
   playRound() {
     Object.keys(this.racingBoard).forEach((carName) => {
       const randomValue = MissionUtils.Random.pickNumberInRange(0, 9);
+      if (randomValue >= 4) {
+        this.racingBoard[carName] += 1;
+      }
     });
   }
 
