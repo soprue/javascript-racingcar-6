@@ -17,7 +17,13 @@ class RacingController {
 
   startRace() {
     OutputView.printStartMessage();
+
+    for (let i = 0; i < this.attemptCount; i++) {
+      this.playRound();
+    }
   }
+
+  playRound() {}
 
   finishRace() {}
 }
