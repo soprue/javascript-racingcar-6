@@ -42,7 +42,17 @@ class RacingController {
     OutputView.printNewLine();
   }
 
-  finishRace() {}
+  finishRace() {
+    const winners = this.calculateWinners();
+    OutputView.printWinners(winners);
+  }
+
+  calculateWinners() {
+    const maxDistance = Math.max(...Object.values(this.racingBoard));
+    return Object.keys(this.racingBoard).filter(
+      (name) => this.racingBoard[name] === maxDistance,
+    );
+  }
 }
 
 export default RacingController;

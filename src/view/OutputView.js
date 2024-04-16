@@ -13,6 +13,10 @@ const OutputView = {
   printNewLine: () => {
     Console.print('');
   },
+
+  printWinners: (winners) => {
+    console.log(`최종 우승자 : ${winners.join(', ')}`);
+  },
 };
 
 export default OutputView;
