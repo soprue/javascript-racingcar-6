@@ -1,4 +1,5 @@
 import InputView from '../view/InputView.js';
+import OutputView from '../view/OutputView.js';
 
 class RacingController {
   constructor(carNames = [], attemptCount = 0) {
@@ -14,7 +15,9 @@ class RacingController {
     this.attemptCount = attemptCount;
   }
 
-  startRace() {}
+  startRace() {
+    OutputView.printStartMessage();
+  }
 
   finishRace() {}
 }
