@@ -1,7 +1,7 @@
 import validateCarNames from '../../src/validation/carNameValidator.js';
 import { CAR_ERROR_MESSAGE } from '../../src/constants/error.js';
 
-describe('자동차 이름 유효성', () => {
+describe('자동차 이름 유효성 테스트', () => {
   test('자동차 이름에 문제가 없는 경우 에러를 반환하지 않는다.', () => {
     const validInput = 'car1,car2,car3';
     expect(() => validateCarNames(validInput)).not.toThrow();
