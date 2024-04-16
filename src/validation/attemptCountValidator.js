@@ -25,6 +25,8 @@ const validateAttemptCount = (input) => {
   checkIsNumber(input);
   checkLength(input);
   checkIsPositiveInteger(input);
+
+  return input;
 };
 
 export default validateAttemptCount;

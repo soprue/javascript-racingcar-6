@@ -39,6 +39,8 @@ const validateCarNames = (input) => {
   trimmedCars.forEach((carName) => {
     checkLength(carName);
   });
+
+  return trimmedCars;
 };
 
 export default validateCarNames;
