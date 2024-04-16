@@ -11,7 +11,7 @@ class RacingController {
     this.attemptCount = attemptCount;
   }
 
-  async prepareGame() {
+  async prepareRace() {
     const racingCarNames = await InputView.readRacingCarNames();
     const attemptCount = await InputView.readAttemptCount();
 
@@ -36,7 +36,10 @@ class RacingController {
       if (randomValue >= 4) {
         this.racingBoard[carName] += 1;
       }
+      OutputView.printCarPosition(carName, this.racingBoard[carName]);
     });
+
+    OutputView.printNewLine();
   }
 
   finishRace() {}
