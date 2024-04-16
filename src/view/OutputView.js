@@ -15,7 +15,7 @@ const OutputView = {
   },
 
   printWinners: (winners) => {
-    console.log(`최종 우승자 : ${winners.join(', ')}`);
+    console.log(`${OUTPUT_MESSAGE.FINAL_WINNERS} : ${winners.join(', ')}`);
   },
 };
 
