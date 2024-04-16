@@ -3,12 +3,9 @@ import OutputView from '../view/OutputView.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
 
 class RacingController {
-  constructor(carNames = [], attemptCount = 0) {
-    this.racingBoard = carNames.reduce((acc, name) => {
-      acc[name] = 0;
-      return acc;
-    }, {});
-    this.attemptCount = attemptCount;
+  constructor() {
+    this.racingBoard = {};
+    this.attemptCount = 0;
   }
 
   async prepareGame() {
