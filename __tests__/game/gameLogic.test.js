@@ -8,8 +8,13 @@ describe('RacingController 기능 테스트', () => {
     // RacingController 인스턴스 생성
     const racingController = new RacingController(carNames, attemptCount);
 
+    const expectedRacingBoard = carNames.reduce((acc, name) => {
+      acc[name] = 0;
+      return acc;
+    }, {});
+
     // carNames와 attemptCount가 올바르게 설정되었는지 확인
-    expect(racingController.carNames).toEqual(carNames);
+    expect(racingController.racingBoard).toEqual(expectedRacingBoard);
     expect(racingController.attemptCount).toBe(attemptCount);
   });
 });
